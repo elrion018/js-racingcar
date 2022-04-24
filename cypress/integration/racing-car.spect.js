@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import { SELECTORS } from '../../src/js/constants/index.js';
+import { SELECTORS, ALERT_TEXTS } from '../../src/js/constants/index.js';
 
 describe('레이싱 카 테스트', () => {
   const checkVisible = (selector) => cy.get(selector).should('be.visible');
@@ -27,9 +27,7 @@ describe('레이싱 카 테스트', () => {
 
     it('1자 미만이거나 5자 초과의 자동차 이름을 입력하면 경고문을 보여준다.', () => {
       typing(SELECTORS.NAMES_INPUT_SELECTOR, 'abcdef');
-      checkAlert(
-        '유효하지 않은 이름 길이입니다. 자동차의 이름은 1자 이상, 5자 이하만 가능합니다.'
-      );
+      checkAlert(ALERT_TEXTS.INCORRECT_NAME_LENGTH);
     });
   });
 });
