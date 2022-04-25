@@ -1,9 +1,11 @@
 export const SELECTORS = {
   APP_SELECTOR: '#app',
-  NAMES_INPUT_FORM: '.names-input-form',
+  INPUTS_FORM_SELECTOR: '.inputs-form',
   NAMES_INPUT_TITLE_SELECTOR: '.names-input-title',
   NAMES_INPUT_SELECTOR: '#names-input',
   NAMES_INPUT_BUTTON_SELECTOR: '.names-input-button',
+  ATTEMPTS_INPUT_SELECTOR: '#attempts-input',
+  ATTEMPTS_INPUT_BUTTON_SELECTOR: '.attempts-input-button',
 };
 
 export const CONDITION_NUMBERS = {
@@ -21,6 +23,7 @@ export const ALERT_TEXTS = {
 export const MOCKED = {
   NAME_UPPER_MAX_LENGTH: 'abcdef',
   CORRECT_NAMES: 'EAST, WEST, SOUTH, NORTH',
+  CORRECT_ATTEMPTS: 3,
 };
 
 export const ATTRIBUTES = {

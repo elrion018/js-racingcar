@@ -8,10 +8,14 @@ import {
 export const view = {
   targetElement: null,
   viewModel: null,
+  renderer: null,
 
-  init: ({ targetSelector, viewModel }) => {
+  init: ({ targetSelector, viewModel, renderer }) => {
     view.targetElement = document.querySelector(targetSelector);
     view.viewModel = viewModel;
+
+    renderer.init(view.targetElement);
+    view.renderer = renderer;
 
     view.attachListeners();
   },

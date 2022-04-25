@@ -36,11 +36,18 @@ describe('레이싱 카 테스트', () => {
       cy.get(SELECTORS.NAMES_INPUT_BUTTON_SELECTOR).click();
     });
 
-    it('정상적인 자동차 이름이 입력되면 입력 창엔 더이상 다른 이름을 입력할 수 없다.', () => {
+    it('정상적인 자동차 이름이 입력되면 이름 입력 창엔 더이상 다른 이름을 입력할 수 없다.', () => {
       cy.get(SELECTORS.NAMES_INPUT_SELECTOR).type(MOCKED.CORRECT_NAMES);
       cy.get(SELECTORS.NAMES_INPUT_BUTTON_SELECTOR).click();
 
       cy.get(SELECTORS.NAMES_INPUT_SELECTOR).should('be.disabled');
+    });
+
+    it('정상적인 자동차 이름이 입력되면 시도 횟수 입력창이 노출된다.', () => {
+      cy.get(SELECTORS.NAMES_INPUT_SELECTOR).type(MOCKED.CORRECT_NAMES);
+      cy.get(SELECTORS.NAMES_INPUT_BUTTON_SELECTOR).click();
+
+      checkVisible(SELECTORS.ATTEMPTS_INPUT_SELECTOR);
     });
   });
 });
