@@ -27,7 +27,9 @@ describe('레이싱 카 테스트', () => {
         SELECTORS.NAMES_INPUT_BUTTON_SELECTOR,
       ]);
     });
+  });
 
+  context('입력 테스트', () => {
     it('1자 미만이거나 5자 초과의 자동차 이름을 입력하면 경고문을 보여준다.', () => {
       cy.get(SELECTORS.NAMES_INPUT_SELECTOR).type(MOCKED.NAME_UPPER_MAX_LENGTH);
       checkAlert(ALERT_TEXTS.INCORRECT_NAME_LENGTH);
