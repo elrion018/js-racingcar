@@ -1,4 +1,9 @@
-import { SELECTORS, SECOND_INDEX } from '../constants/index.js';
+import {
+  SELECTORS,
+  SECOND_INDEX,
+  ATTRIBUTES,
+  EVENTS,
+} from '../constants/index.js';
 
 export const view = {
   targetElement: null,
@@ -12,15 +17,22 @@ export const view = {
   },
 
   attachListeners: () => {
-    view.targetElement.addEventListener('submit', view.inputNamesText);
+    view.targetElement.addEventListener(EVENTS.SUBMIT, view.inputNamesText);
   },
 
   inputNamesText: (event) => {
     event.preventDefault();
 
+    const { targetElement, viewModel } = view;
     const { value: namesText } =
       event.target.elements[SELECTORS.NAMES_INPUT_SELECTOR.slice(SECOND_INDEX)];
 
-    view.viewModel.inputNamesText(namesText);
+    if (viewModel.inputNamesText(namesText)) {
+      const namesInput = targetElement.querySelector(
+        SELECTORS.NAMES_INPUT_SELECTOR
+      );
+
+      namesInput.setAttribute(ATTRIBUTES.DISABLED, '');
+    }
   },
 };

@@ -20,4 +20,13 @@ export const ALERT_TEXTS = {
 
 export const MOCKED = {
   NAME_UPPER_MAX_LENGTH: 'abcdef',
+  CORRECT_NAMES: 'EAST, WEST, SOUTH, NORTH',
+};
+
+export const ATTRIBUTES = {
+  DISABLED: 'disabled',
+};
+
+export const EVENTS = {
+  SUBMIT: 'submit',
 };

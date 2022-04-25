@@ -4,7 +4,7 @@ export const validator = {
   allNamesLengthIsProper: (names) =>
     names.every(
       (name) =>
-        name >= CONDITION_NUMBERS.NAME_MIN_LENGTH &&
-        name <= CONDITION_NUMBERS.NAME_MAX_LENGTH
+        name.length >= CONDITION_NUMBERS.NAME_MIN_LENGTH &&
+        name.length <= CONDITION_NUMBERS.NAME_MAX_LENGTH
     ),
 };
